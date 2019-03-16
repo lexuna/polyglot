@@ -1,8 +1,11 @@
 package me.dinowernli.grpc.polyglot.oauth2;
 
 import java.io.IOException;
+import java.net.URI;
 import java.time.Clock;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,4 +96,10 @@ public class RefreshTokenCredentials extends OAuth2Credentials {
       return result;
     }
   }
+
+@Override
+public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

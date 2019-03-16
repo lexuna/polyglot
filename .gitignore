@@ -4,6 +4,10 @@ bazel-*
 // Vim stuff.
 *swp
 
+// Maven stuff.
+/target/
+/bin/
+
 // Eclipse project.
 .classpath*
 .project*
@@ -22,3 +26,4 @@ output
 
 // Mac
 .DS_Store
+
