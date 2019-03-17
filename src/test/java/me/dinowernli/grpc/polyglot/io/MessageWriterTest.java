@@ -83,7 +83,8 @@ public class MessageWriterTest {
   private static String loadTestFile(String filename) {
     Path filePath = Paths.get(TESTDATA_ROOT, filename);
     try {
-      return new String(Files.readAllBytes(filePath));
+        // Replaced linebreaks for windows compatibility
+        return new String(Files.readAllBytes(filePath)).replaceAll("\r", "");
     } catch (IOException e) {
       throw new RuntimeException("Could not load file: " + filePath.toString());
     }
