@@ -66,11 +66,11 @@ public class ChannelFactory {
 
   private NettyChannelBuilder createChannelBuilder(HostAndPort endpoint) {
     if (!callConfiguration.getUseTls()) {
-      return NettyChannelBuilder.forAddress(endpoint.getHost(), endpoint.getPort())
+      return NettyChannelBuilder.forAddress(endpoint.getHostText(), endpoint.getPort())
           .negotiationType(NegotiationType.PLAINTEXT)
           .intercept(metadataInterceptor());
     } else {
-      return NettyChannelBuilder.forAddress(endpoint.getHost(), endpoint.getPort())
+      return NettyChannelBuilder.forAddress(endpoint.getHostText(), endpoint.getPort())
           .sslContext(createSslContext())
           .negotiationType(NegotiationType.TLS)
           .intercept(metadataInterceptor());
